@@ -7,7 +7,7 @@ body {
 }
 
 #container {
-  width: 480px;
+  width: 30.000em;
   height: auto;
   display: flex;
   align-items: center;
@@ -18,6 +18,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 16px 24px 5px rgba(0, 0, 0, 0.25), 0 8px 16px 0px rgba(0, 0, 0, 0.5);
 }
+
 #answer {
   font-family: arial;
   font-size: 24px;
@@ -38,16 +39,12 @@ body {
 
 p {
   position: absolute;
-  -webkit-margin-bottom: 599px;
-  -moz-margin-bottom: 599px;
-  -ms-margin-bottom: 599px;
-  -o-margin-bottom: 599px;
-  margin-bottom: 599px;
+  bottom: 45em;
 }
 
 #output {
   position: absolute;
-  margin-bottom: 400px;
+  bottom: 20.4em;
   font-size: 2em;
 }
 
