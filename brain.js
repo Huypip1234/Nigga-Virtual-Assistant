@@ -13,11 +13,12 @@ function runSpeechRecognition() {
     recognition.onspeechend = function() { 
         var answer = document.getElementById("answer");
         answer.innerHTML = ". . .";
-        recognition.stop();
     };
+
 
     //tra ve ket qua nghe dc
     recognition.onresult = function(event) {
+        recognition.stop();
         let transcript = event.results[0][0].transcript;
         output.innerHTML = transcript;
 //xu li du lieu (processer)
@@ -73,23 +74,22 @@ case 6:
         } else if (you.includes("your name")) {
             AI = "My name is Pussy, i fucking hate this name";
         } else {
-            AI = "I don't know what you are talking about";
+            AI = "I'm fine thank you, and you?";
         }
         console.log("AI: " + AI);
-
         var answer = document.getElementById("answer");
-        setTimeout(() => {       
+recognition.stop();
+        setTimeout(() => {     
         answer.innerHTML = AI;
         var msg = new SpeechSynthesisUtterance(AI);
         msg.lang = 'en-GB';
         window.speechSynthesis.speak(msg);
          }, 1000)     
-
 // text to speech (output)
         if(you=="bye") {recognition.onend = null;}
+        recognition.stop();
         //gán onend bằng null để kết thúc sẽ ko có gì để gọi nữa
     };
-
   	recognition.onend = recognition.start;
     recognition.start();
 }
