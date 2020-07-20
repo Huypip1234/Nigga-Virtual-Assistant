@@ -22,6 +22,7 @@ function runSpeechRecognition() {
     console.log('stop recording'); 
     if(hasResult==false) {
         AI = "I can't hear you, try again."
+        output.innerHTML = ". . .";
         var answer = document.getElementById("answer");
         setTimeout(() => {     
         answer.innerHTML = AI;
