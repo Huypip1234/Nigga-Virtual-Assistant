@@ -18,7 +18,6 @@ function runSpeechRecognition() {
 
     //tra ve ket qua nghe dc
     recognition.onresult = function(event) {
-        recognition.stop();
         let transcript = event.results[0][0].transcript;
         output.innerHTML = transcript;
 //xu li du lieu (processer)
@@ -78,16 +77,12 @@ case 6:
         }
         console.log("AI: " + AI);
         var answer = document.getElementById("answer");
-recognition.stop();
-        setTimeout(() => {     
         answer.innerHTML = AI;
         var msg = new SpeechSynthesisUtterance(AI);
         msg.lang = 'en-GB';
-        window.speechSynthesis.speak(msg);
-         }, 1000)     
+        window.speechSynthesis.speak(msg);  
 // text to speech (output)
         if(you=="bye") {recognition.onend = null;}
-        recognition.stop();
         //gán onend bằng null để kết thúc sẽ ko có gì để gọi nữa
     };
   	recognition.onend = recognition.start;
