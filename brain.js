@@ -2,6 +2,8 @@ function runSpeechRecognition() {
 	var output = document.getElementById("output");
     var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
     var recognition = new SpeechRecognition();
+    var hasResult = false;
+    var AI;
 
     //speech to text (voice reconized) (input)    
     recognition.onstart = function() {
@@ -13,18 +15,33 @@ function runSpeechRecognition() {
     recognition.onspeechend = function() { 
         var answer = document.getElementById("answer");
         answer.innerHTML = ". . .";
+        recognition.stop();
     };
+
+    recognition.onend = function() { 
+    console.log('stop recording'); 
+    if(hasResult==false) {
+        AI = "I can't hear you, try again."
+        var answer = document.getElementById("answer");
+        setTimeout(() => {     
+        answer.innerHTML = AI;
+        var msg = new SpeechSynthesisUtterance(AI);
+        msg.lang = 'en-GB';
+        window.speechSynthesis.speak(msg);
+         }, 1000)
+        }
+    }
 
 
     //tra ve ket qua nghe dc
     recognition.onresult = function(event) {
-        let transcript = event.results[0][0].transcript;
+        hasResult = true;
+        var transcript = event.results[0][0].transcript;
         output.innerHTML = transcript;
 //xu li du lieu (processer)
         var you = transcript;
         console.log("Me: " + you);
         console.log("...")
-        var AI;
         //date and time
         var d = new Date();
         var current_day = d.getDay();
@@ -66,7 +83,7 @@ case 6:
 }
         
             AI = "today is " + day_name + ", " + current_date;
-        } else if (you.includes("Hello")) {
+        } else if (you.includes("Hello") || you.includes("hello")) {
             AI = "Hello Huy";
         } else if (you.includes("time")) {
             AI = "Now is " + current_hours + " hours, " + current_minutes + " minutes";
@@ -77,15 +94,15 @@ case 6:
         }
         console.log("AI: " + AI);
         var answer = document.getElementById("answer");
+        setTimeout(() => {     
         answer.innerHTML = AI;
         var msg = new SpeechSynthesisUtterance(AI);
         msg.lang = 'en-GB';
-        window.speechSynthesis.speak(msg);  
+        window.speechSynthesis.speak(msg);
+         }, 1000)     
 // text to speech (output)
-        if(you=="bye") {recognition.onend = null;}
-        //gán onend bằng null để kết thúc sẽ ko có gì để gọi nữa
     };
-  	recognition.onend = recognition.start;
+
     recognition.start();
 }
 
