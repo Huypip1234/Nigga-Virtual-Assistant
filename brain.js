@@ -13,10 +13,7 @@ function runSpeechRecognition() {
     recognition.onspeechend = function() { 
         var answer = document.getElementById("answer");
         answer.innerHTML = ". . .";
-    };
-
-    recognition.onaudioend = function() { 
-    console.log('Stop recording');
+        recognition.stop();
     };
 
     //tra ve ket qua nghe dc
