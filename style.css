@@ -40,11 +40,13 @@ body {
 p {
   position: absolute;
   bottom: 45em;
+  top: 9.5em;
 }
 
 #output {
   position: absolute;
   bottom: 20.4em;
+  top: 8em;
   font-size: 2em;
 }
 
