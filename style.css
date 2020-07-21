@@ -15,6 +15,23 @@ body {
   box-shadow: 0 16px 24px 5px rgba(0, 0, 0, 0.25), 0 8px 16px 0px rgba(0, 0, 0, 0.5);
 }
 
+#waves {
+  height: 180px; 
+
+}
+
+@media screen and (max-width: 490px) {
+    #container {
+      width: 24em;
+    }
+  }
+
+@media screen and (max-width: 400px) {
+  #container {
+      width: 22em;
+    }
+}
+
 #answer {
   font-family: arial;
   font-size: 24px;
@@ -35,17 +52,13 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
-  bottom: 240px;
-}
-
-#container canvas {
-  width: 100%;
+  bottom: 180px;
 }
 
 #output {
   position: absolute;
   font-size: 2em;
-  top: 110px;
+  top: 80px;
 }
 
 .btn {
