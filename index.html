@@ -9,13 +9,17 @@ virtual assistant</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<p><button type="button" class="btn btn-white btn-animated" onclick="runSpeechRecognition() ">Start talking</button>
+<div id="box">
+<div id="box_small">
+<button type="button" class="btn btn-white btn-animated" onclick="runSpeechRecognition() ">Start talking</button>
 <div id="output" class="hide"></div>
+</div>
 
 <div id="container">
   <canvas id="waves" style="height: 180px;"></canvas>
   <div id="answer"></div>
 </div>
+</div>	
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js'></script>
 <script src='https://isuttell.github.io/sine-waves/javascripts/sine-waves.min.js'></script>
