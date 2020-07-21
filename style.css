@@ -7,7 +7,7 @@ body {
 }
 
 #container {
-  width: 30.000em;
+  width: 30em;
   height: auto;
   text-align: center;
   background-image: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
@@ -17,13 +17,16 @@ body {
 
 #waves {
   height: 180px; 
-
 }
 
 @media screen and (max-width: 490px) {
     #container {
       width: 24em;
     }
+
+    #waves {
+  height: 150px; 
+}
   }
 
 @media screen and (max-width: 400px) {
