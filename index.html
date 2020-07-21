@@ -7,12 +7,14 @@ virtual assistant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" type="avatar.jpg" href="avatar.jpg"/>
 </head>
 <body>
 <div id="box">
 <div id="box_small">
-<button type="button" class="btn btn-white btn-animated" onclick="runSpeechRecognition() ">Start talking</button>
-<div id="output" class="hide"></div>
+<button type="button" class="btn btn-white btn-animated" onclick="runSpeechRecognition() ">Tap to voice</button>
+<textarea rows="1" cols="25" id="output" class="hide"></textarea>
+<button type="submit" class="example_e" id="send" onclick="textNote()">send</button>
 </div>
 
 <div id="container">
