@@ -18,6 +18,23 @@ body {
 #waves {
   height: 180px; 
 }
+@media screen and (max-width: 850px) {
+  textarea {
+      background: linear-gradient(to right, #ea6594 0%, #cb5ed5)!important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  textarea {
+  background: linear-gradient(to right, #ed668e 0%, #c75ddb 100%)!important;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  textarea {
+  background: linear-gradient(to right, #f16786 0%, #c45ce1 100%)!important;
+  }
+}
 
 @media screen and (max-width: 490px) {
     #container {
@@ -26,13 +43,28 @@ body {
 
     #waves {
   height: 150px; 
-}
   }
+  textarea {
+      background: linear-gradient(to right, #f36781 0%, #bf5beb 100%)!important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #container {
+      width: 22em;
+    }
+    textarea {
+    background: linear-gradient(to right, #f96978 0%, #bd5af2 100%)!important;
+  }
+}
 
 @media screen and (max-width: 400px) {
   #container {
       width: 22em;
     }
+    textarea {
+    background: linear-gradient(to right, #f86878 0%, #bb5af4 100%)!important;
+  }
 }
 
 #answer {
@@ -62,6 +94,7 @@ body {
   position: absolute;
   font-size: 2em;
   top: 80px;
+  color: #464646;
 }
 
 .btn {
@@ -129,6 +162,22 @@ body {
     animation-fill-mode: backwards;
 }
 
+#send {
+  position: relative;
+  top: 140px;
+}
+
+textarea {
+  outline: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  background: linear-gradient(to right, #e86497 0%, #d15fc7 100%);
+  resize: none;
+  border-bottom-width: 2px;
+  text-align: center;
+}
+
 @keyframes moveInBottom {
     0% {
         opacity: 0;
@@ -139,4 +188,38 @@ body {
         opacity: 1;
         transform: translateY(0px);
     }
+}
+
+.example_e {
+border: none;
+background: #404040;
+color: #ffffff !important;
+font-weight: 100;
+padding: 15px;
+border-radius: 30px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+cursor: pointer;
+letter-spacing: .08em;
+outline: none;
+}
+
+.example_e:hover {
+color: #404040 !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: none;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
+}
+
+::selection {
+background: #db61b5;
+}
+::-webkit-selection {
+background: #db61b5;
+}
+::-moz-selection {
+background: #db61b5;
 }
