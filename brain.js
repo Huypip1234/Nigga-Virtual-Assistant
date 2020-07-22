@@ -399,8 +399,10 @@ case 6:
          }, 1000)
     }
 
-    var sendButton = document.getElementById("send");
+    
     function checkdata(){
+        var output = document.getElementById("output");
+        var sendButton = document.getElementById("send");
         console.log("check data...");
         if(output.value!="") {
             sendButton.style.display = "unset";
