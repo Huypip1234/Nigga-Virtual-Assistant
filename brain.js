@@ -399,5 +399,8 @@ case 6:
          }, 1000)
     }
 
-
+    var sendButton = document.getElementById("send");
+    output.onkeydown = function(){
+        sendButton.style.display = "block";
+    };
 // footer
