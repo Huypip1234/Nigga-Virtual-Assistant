@@ -30,7 +30,7 @@ function runSpeechRecognition() {
     console.log('stop recording'); 
     if(hasResult==false) {
         AI = "I can't hear you, try again."
-        output.innerHTML = ". . .";
+        output.value = ". . .";
         var answer = document.getElementById("answer");
         setTimeout(() => {     
         answer.innerHTML = AI;
@@ -46,7 +46,7 @@ function runSpeechRecognition() {
     recognition.onresult = function(event) {
         hasResult = true;
         var transcript = event.results[0][0].transcript;
-        output.innerHTML = transcript;
+        output.value = transcript;
 //xu li du lieu (processer)
         var you = transcript.toLowerCase();
         console.log("Me: " + you);
@@ -400,7 +400,14 @@ case 6:
     }
 
     var sendButton = document.getElementById("send");
-    output.onkeydown = function(){
-        sendButton.style.display = "block";
+    function checkdata(){
+        console.log("check data...");
+        if(output.value!="") {
+            sendButton.style.display = "unset";
+        } else {
+            sendButton.style.display = "none";
+        }
+
     };
 // footer
+// thu gọn if else
