@@ -198,4 +198,40 @@ background: #db61b5;
 background: #db61b5;
 }
 
+#footer {
+    position: absolute;
+    color: white;
+    background: #2b2b2b;
+    width: 100%;
+    bottom: 0;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#avatar {
+  width: 60px;
+  padding-left: 20px;
+}
+
+#coppyright {
+    font-family: arial;
+    font-weight: 200;
+    color: #fff;
+    font-size: 18px;
+    margin-left: 30px;
+    padding-right: 20px;
+}
+
+@media screen and (max-width: 490px) {
+
+  #footer {
+    background: unset;
+  }
+  #coppyright {
+    color: #1b1b1b;
+    margin-left: 15px;
+}
+
 
