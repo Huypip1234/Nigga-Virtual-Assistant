@@ -1,4 +1,5 @@
 var dem=0;
+var angyMode=0;
 var yourName = prompt('Enter your name: ')
 
 function runSpeechRecognition() {
@@ -53,10 +54,17 @@ function runSpeechRecognition() {
         console.log("Me: " + you);
         console.log("...")
 
-        if (you.includes("your facebook")) {
-            AI = "yes, i have";
-        } else if (you.includes("bye")) {
-            AI = "Ok see you again";
+        if(angyMode == 1) {
+            AI = "I said who is siri";
+            angyMode++;
+         } else if(angyMode == 2) {
+            AI = "fuck you";
+            angyMode++;
+         } else if(angyMode == 3) {
+            AI = "Go ask Siri";
+         } else {
+        if (you.includes("create") && you.includes("you")) {
+            AI = "That is Huy handsome";
         } else if (you.includes("fun") || you.includes("joke")) {
             setTimeout(() => {
             var on = confirm("Would you like to see something cool?");
@@ -67,6 +75,27 @@ function runSpeechRecognition() {
                 AI = "Ok, so how can i help you";
             }
             }, 1000)
+        } else if (you.includes("president") && you.includes("america")) {
+            AI = "Donald Trump";
+        } else if (you.includes("say") && you.includes("did")) {
+            AI = "I said you are very good";
+        } else if (you.includes("birthday") || you.includes("born") || you.includes("old")) {
+            AI = "I was born in 19/7/2020";
+        } else if (you.includes("good") || you.includes("smart") || you.includes("great") || you.includes("merry") || you.includes("welcome")) {
+            AI = "Oh, thank you";
+        } else if (you.includes("bad") || you.includes("stupid") || you.includes("no")) {
+            AI = "I'm so sorry";
+        } else if (you.includes("fuck") || you.includes("make me") || you.includes("not you")) {
+            AI = "hihi, i'm sorry";
+        } else if (you.includes("how") && you.includes("you")) {
+            AI = "I'm fine thank you";
+        } else if (you.includes("your facebook")) {
+            AI = "yes, i have";
+        } else if (you.includes("siri")) {
+            AI = "Who is Siri ?";
+            angyMode++;
+        } else if (you.includes("bye")) {
+            AI = "Ok see you again";
         } else if (you.includes("open")) {
             if (you.includes("youtube")) {
                 window.open('https://www.youtube.com/', "_blank");
@@ -81,37 +110,11 @@ function runSpeechRecognition() {
                 window.open('https://www.google.com/', "_blank");
                 AI = "Ok";
             }
-        } else if (you.includes("president") && you.includes("america")) {
-            AI = "Donald Trump";
+        } else if (you.includes("thank")) {
+            AI = "No problem";
         } else if (you.includes("donald trump")) {
             window.open('https://vi.wikipedia.org/wiki/Donald_Trump', "_blank");
             AI = "This is some information about Donald Trump";
-        } else if (you.includes("good") || you.includes("smart") || you.includes("great") || you.includes("merry") || you.includes("welcome")) {
-            AI = "Oh, thank you";
-        } else if (you.includes("hey")) {
-            if(dem==0) {
-            AI = "Hi, how can i help you?";
-            dem++;
-            console.log(dem);
-            } else if(dem==1) {
-                AI = "I'm here";
-                dem++;
-                console.log(dem); 
-            } else if(dem==2) {
-                AI = "I'm still here ???";
-                dem++;
-                console.log(dem); 
-            } else if(dem==3) {
-                AI = "What the fuck";
-                dem++;
-                console.log(dem); 
-            } else if(dem==4) {
-                AI = "Hey cái lồn";
-                dem++;
-                console.log(dem); 
-            } else {
-                AI = "get out of here";
-            }
         } else if (you.includes("today")) {
             var day_name = '';
             switch (current_day) {
@@ -138,6 +141,42 @@ case 6:
 }
         
             AI = "today is " + day_name + ", " + current_date;
+        } else if (you.includes("time")) {
+            AI = "Now is " + current_hours + " hours, " + current_minutes + " minutes";
+        } else if (you.includes("your name")) {
+            AI = "My name is Pussy, i fucking hate this name";
+        } else if (you.includes("my name")) {
+            AI = "ah, I knew you, are you my old friend?";
+        } else if (you.includes("vietnamese") || you.includes("việt nam")) {
+            AI = "Rít điếu thuốc lào nâng cao sức khỏe";
+        } else if (you.includes("sorry")) {
+            AI = "No way";
+        } else if (you.includes("help")) {
+            AI = "I can't, because i just a robot, why don't you search google";
+        } else if (you.includes("please")) {
+            AI = "Ok, this time only " + yourName;
+        } else if (you.includes("yes")) {
+            AI = "I know it";
+        } else if (you.includes("why")) {
+            AI = "that is secret";
+        } else if (you=="what") {
+            AI = "are you deaf ?";
+        } else if (you.includes("can't")) {
+            AI = "Have you tried everything?";
+        } else if (you.includes("can")) {
+            AI = "oh, amazing";
+        } else if (you.includes("is me")) {
+            AI = "oh, I'm very honored";
+        } else if (you.includes("bored") || you.includes("tired")) {
+            setTimeout(() => {
+            var on = confirm("Would you like to see something cool?");
+            if (on) {
+                window.open('https://bestjavporn.com/video_tag/javfinder/', "_blank");
+                AI = "you have watched yet, Is it fun?"
+            } else {
+                AI = "Ok, so how can i help you";
+            }
+            }, 1000)
         } else if (you.includes("hello") || you.includes("hi")) {
             if(yourName!="") {
             if(dem==0) {
@@ -166,49 +205,34 @@ case 6:
             } else {
                 AI = "Hello...ah...I don't know your name.";
             }
-        } else if (you.includes("time")) {
-            AI = "Now is " + current_hours + " hours, " + current_minutes + " minutes";
-        } else if (you.includes("your name")) {
-            AI = "My name is Pussy, i fucking hate this name";
-        } else if (you.includes("my name")) {
-            AI = "ah, I knew you, are you my old friend?";
-        } else if (you.includes("vietnamese") || you.includes("việt nam")) {
-            AI = "Rít điếu thuốc lào nâng cao sức khỏe";
-        } else if (you.includes("bad") || you.includes("stupid") || you.includes("no")) {
-            AI = "I'm so sorry";
-        } else if (you.includes("sorry")) {
-            AI = "No way";
-        } else if (you.includes("help")) {
-            AI = "I can't, because i just a robot, why don't you search google";
-        } else if (you.includes("please")) {
-            AI = "Ok, this time only " + yourName;
-        } else if (you.includes("yes")) {
-            AI = "I know it";
-        } else if (you.includes("why")) {
-            AI = "that is secret";
-        } else if (you=="what") {
-            AI = "are you deaf ?";
-        } else if (you.includes("fuck") || you.includes("make me")) {
-            AI = "hihi, i'm sorry";
-        } else if (you.includes("can't")) {
-            AI = "Have you tried everything?";
-        } else if (you.includes("can")) {
-            AI = "oh, amazing";
-        } else if (you.includes("bored") || you.includes("tired")) {
-            setTimeout(() => {
-            var on = confirm("Would you like to see something cool?");
-            if (on) {
-                window.open('https://bestjavporn.com/video_tag/javfinder/', "_blank");
-                AI = "you have watched yet, Is it fun?"
+        } else if (you.includes("hey")) {
+            if(dem==0) {
+            AI = "Hi, how can i help you?";
+            dem++;
+            console.log(dem);
+            } else if(dem==1) {
+                AI = "I'm here";
+                dem++;
+                console.log(dem); 
+            } else if(dem==2) {
+                AI = "I'm still here ???";
+                dem++;
+                console.log(dem); 
+            } else if(dem==3) {
+                AI = "What the fuck";
+                dem++;
+                console.log(dem); 
+            } else if(dem==4) {
+                AI = "Hey cái lồn";
+                dem++;
+                console.log(dem); 
             } else {
-                AI = "Ok, so how can i help you";
+                AI = "get out of here";
             }
-            }, 1000)
-        } else if (you.includes("how") && you.includes("you")) {
-            AI = "I'm fine thank you";
         } else {
             AI = "ha ha ha ha ha ha ha ha, it so fun";
         }
+    }
         console.log("AI: " + AI);
         var answer = document.getElementById("answer");
         setTimeout(() => {     
@@ -242,11 +266,17 @@ function textNote() {
         var you = text.toLowerCase();
         console.log("Me: " + you);
         console.log("...")
-
-        if (you.includes("your facebook")) {
-            AI = "yes, i have";
-        } else if (you.includes("bye")) {
-            AI = "Ok see you again";
+        if(angyMode == 1) {
+            AI = "I said who is siri";
+            angyMode++;
+         } else if(angyMode == 2) {
+            AI = "fuck you";
+            angyMode++;
+         } else if(angyMode == 3) {
+            AI = "Go ask Siri";
+         } else {
+        if (you.includes("create") && you.includes("you")) {
+            AI = "That is Huy handsome";
         } else if (you.includes("fun") || you.includes("joke")) {
             setTimeout(() => {
             var on = confirm("Would you like to see something cool?");
@@ -257,6 +287,27 @@ function textNote() {
                 AI = "Ok, so how can i help you";
             }
             }, 1000)
+        } else if (you.includes("president") && you.includes("america")) {
+            AI = "Donald Trump";
+        } else if (you.includes("say") && you.includes("did")) {
+            AI = "I said you are very good";
+        } else if (you.includes("birthday") || you.includes("born") || you.includes("old")) {
+            AI = "I was born in 19/7/2020";
+        } else if (you.includes("good") || you.includes("smart") || you.includes("great") || you.includes("merry") || you.includes("welcome")) {
+            AI = "Oh, thank you";
+        } else if (you.includes("bad") || you.includes("stupid") || you.includes("no")) {
+            AI = "I'm so sorry";
+        } else if (you.includes("fuck") || you.includes("make me") || you.includes("not you")) {
+            AI = "hihi, i'm sorry";
+        } else if (you.includes("how") && you.includes("you")) {
+            AI = "I'm fine thank you";
+        } else if (you.includes("your facebook")) {
+            AI = "yes, i have";
+        } else if (you.includes("siri")) {
+            AI = "Who is Siri ?";
+            angyMode++;
+        } else if (you.includes("bye")) {
+            AI = "Ok see you again";
         } else if (you.includes("open")) {
             if (you.includes("youtube")) {
                 window.open('https://www.youtube.com/', "_blank");
@@ -271,37 +322,11 @@ function textNote() {
                 window.open('https://www.google.com/', "_blank");
                 AI = "Ok";
             }
-        } else if (you.includes("president") && you.includes("america")) {
-            AI = "Donald Trump";
+        } else if (you.includes("thank")) {
+            AI = "No problem";
         } else if (you.includes("donald trump")) {
             window.open('https://vi.wikipedia.org/wiki/Donald_Trump', "_blank");
             AI = "This is some information about Donald Trump";
-        } else if (you.includes("good") || you.includes("smart") || you.includes("great") || you.includes("merry") || you.includes("welcome")) {
-            AI = "Oh, thank you";
-        } else if (you.includes("hey")) {
-            if(dem==0) {
-            AI = "Hi, how can i help you?";
-            dem++;
-            console.log(dem);
-            } else if(dem==1) {
-                AI = "I'm here";
-                dem++;
-                console.log(dem); 
-            } else if(dem==2) {
-                AI = "I'm still here ???";
-                dem++;
-                console.log(dem); 
-            } else if(dem==3) {
-                AI = "What the fuck";
-                dem++;
-                console.log(dem); 
-            } else if(dem==4) {
-                AI = "Hey cái lồn";
-                dem++;
-                console.log(dem); 
-            } else {
-                AI = "get out of here";
-            }
         } else if (you.includes("today")) {
             var day_name = '';
             switch (current_day) {
@@ -328,6 +353,42 @@ case 6:
 }
         
             AI = "today is " + day_name + ", " + current_date;
+        } else if (you.includes("time")) {
+            AI = "Now is " + current_hours + " hours, " + current_minutes + " minutes";
+        } else if (you.includes("your name")) {
+            AI = "My name is Pussy, i fucking hate this name";
+        } else if (you.includes("my name")) {
+            AI = "ah, I knew you, are you my old friend?";
+        } else if (you.includes("vietnamese") || you.includes("việt nam")) {
+            AI = "Rít điếu thuốc lào nâng cao sức khỏe";
+        } else if (you.includes("sorry")) {
+            AI = "No way";
+        } else if (you.includes("help")) {
+            AI = "I can't, because i just a robot, why don't you search google";
+        } else if (you.includes("please")) {
+            AI = "Ok, this time only " + yourName;
+        } else if (you.includes("yes")) {
+            AI = "I know it";
+        } else if (you.includes("why")) {
+            AI = "that is secret";
+        } else if (you=="what") {
+            AI = "are you deaf ?";
+        } else if (you.includes("can't")) {
+            AI = "Have you tried everything?";
+        } else if (you.includes("can")) {
+            AI = "oh, amazing";
+        } else if (you.includes("is me")) {
+            AI = "oh, I'm very honored";
+        } else if (you.includes("bored") || you.includes("tired")) {
+            setTimeout(() => {
+            var on = confirm("Would you like to see something cool?");
+            if (on) {
+                window.open('https://bestjavporn.com/video_tag/javfinder/', "_blank");
+                AI = "you have watched yet, Is it fun?"
+            } else {
+                AI = "Ok, so how can i help you";
+            }
+            }, 1000)
         } else if (you.includes("hello") || you.includes("hi")) {
             if(yourName!="") {
             if(dem==0) {
@@ -356,49 +417,34 @@ case 6:
             } else {
                 AI = "Hello...ah...I don't know your name.";
             }
-        } else if (you.includes("time")) {
-            AI = "Now is " + current_hours + " hours, " + current_minutes + " minutes";
-        } else if (you.includes("your name")) {
-            AI = "My name is Pussy, i fucking hate this name";
-        } else if (you.includes("my name")) {
-            AI = "ah, I knew you, are you my old friend?";
-        } else if (you.includes("vietnamese") || you.includes("việt nam")) {
-            AI = "Rít điếu thuốc lào nâng cao sức khỏe";
-        } else if (you.includes("bad") || you.includes("stupid") || you.includes("no")) {
-            AI = "I'm so sorry";
-        } else if (you.includes("sorry")) {
-            AI = "No way";
-        } else if (you.includes("help")) {
-            AI = "I can't, because i just a robot, why don't you search google";
-        } else if (you.includes("please")) {
-            AI = "Ok, this time only " + yourName;
-        } else if (you.includes("yes")) {
-            AI = "I know it";
-        } else if (you.includes("why")) {
-            AI = "that is secret";
-        } else if (you=="what") {
-            AI = "are you deaf ?";
-        } else if (you.includes("fuck") || you.includes("make me")) {
-            AI = "hihi, i'm sorry";
-        } else if (you.includes("can't")) {
-            AI = "Have you tried everything?";
-        } else if (you.includes("can")) {
-            AI = "oh, amazing";
-        } else if (you.includes("bored") || you.includes("tired")) {
-            setTimeout(() => {
-            var on = confirm("Would you like to see something cool?");
-            if (on) {
-                window.open('https://bestjavporn.com/video_tag/javfinder/', "_blank");
-                AI = "you have watched yet, Is it fun?"
+        } else if (you.includes("hey")) {
+            if(dem==0) {
+            AI = "Hi, how can i help you?";
+            dem++;
+            console.log(dem);
+            } else if(dem==1) {
+                AI = "I'm here";
+                dem++;
+                console.log(dem); 
+            } else if(dem==2) {
+                AI = "I'm still here ???";
+                dem++;
+                console.log(dem); 
+            } else if(dem==3) {
+                AI = "What the fuck";
+                dem++;
+                console.log(dem); 
+            } else if(dem==4) {
+                AI = "Hey cái lồn";
+                dem++;
+                console.log(dem); 
             } else {
-                AI = "Ok, so how can i help you";
+                AI = "get out of here";
             }
-            }, 1000)
-        } else if (you.includes("how") && you.includes("you")) {
-            AI = "I'm fine thank you";
         } else {
             AI = "ha ha ha ha ha ha ha ha, it so fun";
         }
+    }
         console.log("AI: " + AI);
         setTimeout(() => {     
         answer.innerHTML = AI;
@@ -420,5 +466,5 @@ case 6:
         }
 
     };
-// footer
+
 // thu gọn if else
