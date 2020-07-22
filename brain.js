@@ -1,21 +1,22 @@
 var dem=0;
 var yourName = prompt('Enter your name: ')
-var output = document.getElementById("output");
-var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
-var recognition = new SpeechRecognition();
-var hasResult = false;
-var AI;
-//date and time
+
+function runSpeechRecognition() {
+    //date and time
         var d = new Date();
         var current_day = d.getDay();
         var current_date = d.getDate();
         var current_hours = d.getHours();
         var current_minutes = d.getMinutes();
-
-function runSpeechRecognition() {
+    var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+    var recognition = new SpeechRecognition();
+    var output = document.getElementById("output");
+    var hasResult = false;
+    var AI;
     //speech to text (voice reconized) (input)    
     recognition.onstart = function() {
     	//action.innerHTML = "<small>listening, please speak...</small>"
+        var answer = document.getElementById("answer");
         answer.innerHTML = "Im listening...";
         console.log("Im listening...")
     };
@@ -224,10 +225,18 @@ case 6:
 
 
 
-var answer = document.getElementById("answer");
 
 // Code viết chữ
 function textNote() {
+        //date and time
+            var d = new Date();
+            var current_day = d.getDay();
+            var current_date = d.getDate();
+            var current_hours = d.getHours();
+            var current_minutes = d.getMinutes();
+        var answer = document.getElementById("answer");
+        var output = document.getElementById("output");
+        var AI;
         answer.innerHTML = ". . .";
         var text = document.getElementById("output").value;
         var you = text.toLowerCase();
