@@ -16,55 +16,8 @@ body {
 }
 
 #waves {
-  height: 180px; 
-}
-@media screen and (max-width: 850px) {
-  textarea {
-      background: linear-gradient(to right, #ea6594 0%, #cb5ed5)!important;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  textarea {
-  background: linear-gradient(to right, #ed668e 0%, #c75ddb 100%)!important;
-  }
-}
-
-@media screen and (max-width: 560px) {
-  textarea {
-  background: linear-gradient(to right, #f16786 0%, #c45ce1 100%)!important;
-  }
-}
-
-@media screen and (max-width: 490px) {
-    #container {
-      width: 24em;
-    }
-
-    #waves {
-  height: 150px; 
-  }
-  textarea {
-      background: linear-gradient(to right, #f36781 0%, #bf5beb 100%)!important;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  #container {
-      width: 22em;
-    }
-    textarea {
-    background: linear-gradient(to right, #f96978 0%, #bd5af2 100%)!important;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  #container {
-      width: 22em;
-    }
-    textarea {
-    background: linear-gradient(to right, #f86878 0%, #bb5af4 100%)!important;
-  }
+  height: 180px!important; 
+  width: 100%!important; 
 }
 
 #answer {
@@ -94,7 +47,7 @@ body {
   position: absolute;
   font-size: 2em;
   top: 80px;
-  color: #464646;
+
 }
 
 .btn {
@@ -164,18 +117,39 @@ body {
 
 #send {
   position: relative;
-  top: 140px;
+  top: 160px;
+  display: none;
 }
 
 textarea {
   outline: none;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  background: linear-gradient(to right, #e86497 0%, #d15fc7 100%);
+  background: none;
   resize: none;
-  border-bottom-width: 2px;
+  border: none;
   text-align: center;
+}
+
+@media screen and (max-width: 490px) {
+    #container {
+      width: 24em;
+    }
+
+    #waves {
+  height: 150px!important;
+  width: 100%!important; 
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #container {
+      width: 22em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+  #container {
+      width: 22em;
+    }
 }
 
 @keyframes moveInBottom {
@@ -223,3 +197,5 @@ background: #db61b5;
 ::-moz-selection {
 background: #db61b5;
 }
+
+
