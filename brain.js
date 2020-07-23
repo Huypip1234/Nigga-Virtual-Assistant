@@ -79,6 +79,8 @@ function runSpeechRecognition() {
             AI = "Donald Trump";
         } else if (you.includes("say") && you.includes("did")) {
             AI = "I said you are very good";
+        } else if (you.includes("bye")) {
+            AI = "Ok see you again";
         } else if (you.includes("birthday") || you.includes("born") || you.includes("old")) {
             AI = "I was born in 19/7/2020";
         } else if (you.includes("good") || you.includes("smart") || you.includes("great") || you.includes("merry") || you.includes("welcome")) {
@@ -94,8 +96,6 @@ function runSpeechRecognition() {
         } else if (you.includes("siri")) {
             AI = "Who is Siri ?";
             angyMode++;
-        } else if (you.includes("bye")) {
-            AI = "Ok see you again";
         } else if (you.includes("open")) {
             if (you.includes("youtube")) {
                 window.open('https://www.youtube.com/', "_blank");
@@ -293,6 +293,8 @@ function textNote() {
             AI = "I said you are very good";
         } else if (you.includes("birthday") || you.includes("born") || you.includes("old")) {
             AI = "I was born in 19/7/2020";
+        } else if (you.includes("bye")) {
+            AI = "Ok see you again";
         } else if (you.includes("good") || you.includes("smart") || you.includes("great") || you.includes("merry") || you.includes("welcome")) {
             AI = "Oh, thank you";
         } else if (you.includes("bad") || you.includes("stupid") || you.includes("no")) {
@@ -306,8 +308,6 @@ function textNote() {
         } else if (you.includes("siri")) {
             AI = "Who is Siri ?";
             angyMode++;
-        } else if (you.includes("bye")) {
-            AI = "Ok see you again";
         } else if (you.includes("open")) {
             if (you.includes("youtube")) {
                 window.open('https://www.youtube.com/', "_blank");
@@ -466,5 +466,3 @@ case 6:
         }
 
     };
-
-// thu gọn if else
