@@ -2,6 +2,13 @@ var dem=0;
 var angyMode=0;
 var yourName = prompt('Enter your name: ')
 
+var eleAll = [
+            'ha ha ha ha ha ha ha ha, it so fun',
+            'what about you ?',
+            'why not ?',
+            'ah, i have a good idea!',
+            ];
+            
 function runSpeechRecognition() {
     //date and time
         var d = new Date();
@@ -75,7 +82,8 @@ function runSpeechRecognition() {
             AI = "Ok, this time only " + yourName;
         } 
     } else {
-            AI = "ha ha ha ha ha ha ha ha, it so fun";
+            var randomNumber = Math.floor(Math.random()*eleAll.length);
+            AI = eleAll[randomNumber];
         }
 
 
@@ -302,8 +310,6 @@ case 6:
 }
 
 
-
-
 // Code viết chữ
 function textNote() {
         //date and time
@@ -341,7 +347,8 @@ function textNote() {
             AI = "Ok, this time only " + yourName;
         } 
     } else {
-            AI = "ha ha ha ha ha ha ha ha, it so fun";
+            var randomNumber = Math.floor(Math.random()*eleAll.length);
+            AI = eleAll[randomNumber];
         }
 
 
